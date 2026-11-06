@@ -1,0 +1,1563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Portfolio of Elvira Maloku, Computer Science graduate and software development candidate from Prishtina, Kosovo."
+  />
+
+  <title>Elvira Maloku — Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0d0c12;
+      --bg-soft: #15131d;
+      --card: #191623;
+      --card-2: #211c2d;
+
+      --text: #f7f3fb;
+      --muted: #bdb5c9;
+
+      --pink: #f2a7c6;
+      --pink-2: #ffd2e4;
+
+      --lav: #b8a7ff;
+      --lav-2: #8f7eea;
+
+      --line: rgba(255, 255, 255, 0.08);
+
+      --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      color: var(--text);
+
+      background:
+        radial-gradient(
+          circle at 10% 10%,
+          rgba(242, 167, 198, 0.09),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 18%,
+          rgba(184, 167, 255, 0.1),
+          transparent 25%
+        ),
+        radial-gradient(
+          circle at 50% 85%,
+          rgba(242, 167, 198, 0.06),
+          transparent 30%
+        ),
+        var(--bg);
+
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+      line-height: 1.6;
+
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 36px));
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    .nav {
+      position: sticky;
+      top: 0;
+
+      z-index: 50;
+
+      backdrop-filter: blur(16px);
+
+      background: rgba(13, 12, 18, 0.72);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 72px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      font-weight: 800;
+
+      letter-spacing: -0.03em;
+
+      font-size: 1.1rem;
+    }
+
+    .brand span {
+      color: var(--pink);
+    }
+
+    .nav-links {
+      display: flex;
+
+      gap: 20px;
+
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+
+      font-size: 0.92rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .pill {
+      border: 1px solid rgba(242, 167, 198, 0.35);
+
+      background: rgba(242, 167, 198, 0.08);
+
+      color: var(--pink-2) !important;
+
+      padding: 9px 14px;
+
+      border-radius: 999px;
+    }
+
+    /* HERO */
+
+    .hero {
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 90px 0 100px;
+
+  position: relative;
+}
+
+.hero-content {
+  max-width: 780px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 7vw, 5.3rem);
+
+  line-height: 1;
+
+  margin: 20px 0 14px;
+
+  letter-spacing: -0.055em;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.45rem, 3vw, 2.25rem);
+
+  line-height: 1.25;
+
+  font-weight: 600;
+
+  margin: 0 0 20px;
+
+  max-width: 700px;
+
+  background: linear-gradient(
+    90deg,
+    var(--pink-2),
+    var(--lav)
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.hero p {
+  max-width: 640px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+  margin: 0;
+}
+
+.hero-actions {
+  display: flex;
+
+  justify-content: center;
+
+  flex-wrap: wrap;
+
+  gap: 12px;
+
+  margin-top: 30px;
+}
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 9px;
+
+      padding: 13px 18px;
+
+      border-radius: 14px;
+
+      font-weight: 750;
+
+      font-size: 0.95rem;
+
+      border: 1px solid var(--line);
+
+      background: #1c1826;
+
+      transition: 0.25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .btn.primary {
+      color: #15121b;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--pink-2),
+          var(--lav)
+        );
+
+      border: 0;
+    }
+
+    
+    /* SECTIONS */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-head {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      align-items: end;
+
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      color: var(--pink);
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.16em;
+
+      font-weight: 800;
+
+      font-size: 0.78rem;
+    }
+
+    h2 {
+      font-size:
+        clamp(
+          2rem,
+          4vw,
+          3.4rem
+        );
+
+      margin: 8px 0 0;
+
+      letter-spacing: -0.045em;
+    }
+
+    .section-note {
+      color: var(--muted);
+
+      max-width: 500px;
+    }
+
+    .grid-2 {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 18px;
+    }
+
+    .card {
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.045),
+          rgba(255, 255, 255, 0.018)
+        );
+
+      border: 1px solid var(--line);
+
+      border-radius: var(--radius);
+
+      padding: 28px;
+
+      box-shadow:
+        0 8px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    /* ABOUT */
+
+    .about-copy {
+      font-size: 1.06rem;
+
+      color: var(--muted);
+    }
+
+    .facts {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 14px;
+    }
+
+    .fact {
+      background: rgba(255, 255, 255, 0.025);
+
+      border: 1px solid var(--line);
+
+      padding: 18px;
+
+      border-radius: 18px;
+    }
+
+    .fact strong {
+      display: block;
+
+      color: var(--pink-2);
+
+      font-size: 0.8rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 0.08em;
+    }
+
+    .fact span {
+      display: block;
+
+      margin-top: 5px;
+
+      font-weight: 700;
+    }
+
+    /* PROJECT */
+
+    .project {
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 310px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: space-between;
+    }
+
+    .project::after {
+      content: "";
+
+      position: absolute;
+
+      inset:
+        auto
+        -70px
+        -90px
+        auto;
+
+      width: 220px;
+      height: 220px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle,
+          var(--lav),
+          transparent 68%
+        );
+
+      opacity: 0.12;
+    }
+
+    .project-top {
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 18px;
+
+      align-items: start;
+    }
+
+    .project-icon {
+      width: 56px;
+      height: 56px;
+
+      border-radius: 18px;
+
+      display: grid;
+
+      place-items: center;
+
+      font-size: 1.5rem;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(242, 167, 198, 0.18),
+          rgba(184, 167, 255, 0.18)
+        );
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .tag-wrap {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      margin-top: 18px;
+    }
+
+    .tag {
+      border-radius: 999px;
+
+      padding: 7px 10px;
+
+      font-size: 0.78rem;
+
+      color: #d9d1e6;
+
+      background: #252031;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .project h3 {
+      font-size: 2rem;
+
+      margin: 28px 0 8px;
+
+      letter-spacing: -0.035em;
+    }
+
+    .project p {
+      color: var(--muted);
+
+      max-width: 650px;
+    }
+
+    .project-list {
+      margin: 16px 0 0;
+
+      padding-left: 18px;
+
+      color: var(--muted);
+    }
+
+    /* PROJECT LINKS AND GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+    .projects-grid .project:first-child { grid-column: 1 / -1; }
+    .project h3 { overflow-wrap: anywhere; }
+    .project-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+    .project-actions .btn { font-size: .85rem; padding: 10px 14px; }
+    @media (max-width: 720px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .projects-grid .project:first-child { grid-column: auto; }
+    }
+
+    /* SKILLS */
+
+    /* SKILLS */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.tech-card {
+  position: relative;
+
+  min-height: 180px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  padding: 24px;
+
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.018)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+
+  overflow: hidden;
+}
+
+.tech-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: radial-gradient(
+    circle,
+    rgba(184, 167, 255, 0.17),
+    transparent 70%
+  );
+
+  top: -60px;
+  right: -60px;
+
+  opacity: 0;
+
+  transition: opacity 0.3s ease;
+}
+
+.tech-card:hover {
+  transform: translateY(-7px);
+
+  border-color: rgba(242, 167, 198, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(242, 167, 198, 0.06),
+      rgba(184, 167, 255, 0.04)
+    );
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.28),
+    0 0 30px rgba(184, 167, 255, 0.05);
+}
+
+.tech-card:hover::before {
+  opacity: 1;
+}
+
+.tech-card img {
+  width: 78px;
+  height: 78px;
+
+  object-fit: contain;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.tech-card:hover img {
+  transform: scale(1.08);
+}
+
+.tech-card span {
+  color: var(--muted);
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.08em;
+
+  text-align: center;
+}
+
+.text-icon {
+  width: 78px;
+  height: 78px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(242, 167, 198, 0.15),
+      rgba(184, 167, 255, 0.16)
+    );
+
+  color: var(--pink-2);
+
+  font-size: 1.35rem;
+  font-weight: 900;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* responsive */
+
+@media (max-width: 900px) {
+    .skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+}
+
+@media (max-width: 650px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .tech-card {
+    min-height: 150px;
+    padding: 18px;
+  }
+
+  .tech-card img {
+    width: 62px;
+    height: 62px;
+  }
+
+  .text-icon {
+    width: 62px;
+    height: 62px;
+  }
+}
+    /* TIMELINE */
+
+    .timeline {
+      position: relative;
+
+      padding-left: 28px;
+    }
+
+    .timeline::before {
+      content: "";
+
+      position: absolute;
+
+      left: 7px;
+
+      top: 8px;
+
+      bottom: 8px;
+
+      width: 1px;
+
+      background: var(--line);
+    }
+
+    .timeline-item {
+      position: relative;
+
+      padding:
+        0
+        0
+        34px
+        18px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+
+      position: absolute;
+
+      left: -25px;
+
+      top: 8px;
+
+      width: 10px;
+      height: 10px;
+
+      border-radius: 50%;
+
+      background: var(--pink);
+
+      box-shadow:
+        0 0 0 5px
+        rgba(242, 167, 198, 0.11);
+    }
+
+    .timeline-item .date {
+      font-size: 0.8rem;
+
+      color: var(--pink);
+
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin: 7px 0 4px;
+    }
+
+    .timeline-item p {
+      margin: 0;
+
+      color: var(--muted);
+    }
+
+    /* CONTACT */
+
+    .contact-card {
+      text-align: center;
+
+      padding: 58px 28px;
+
+      background:
+        radial-gradient(
+          circle at 20% 20%,
+          rgba(242, 167, 198, 0.12),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 85% 75%,
+          rgba(184, 167, 255, 0.12),
+          transparent 30%
+        ),
+        var(--card);
+    }
+
+    .contact-card p {
+      max-width: 600px;
+
+      margin: 14px auto 28px;
+
+      color: var(--muted);
+    }
+
+    .contact-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    footer {
+      padding: 35px 0 50px;
+
+      color: #8f879a;
+
+      font-size: 0.85rem;
+
+      text-align: center;
+    }
+
+    .tiny-heart {
+      color: var(--pink);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 860px) {
+
+      .hero {
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 55px;
+      }
+
+      .profile-card {
+        min-height: 390px;
+      }
+
+      .grid-2,
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+
+        flex-direction: column;
+      }
+
+      .nav-links a:not(.pill) {
+        display: none;
+      }
+
+      h1 {
+        font-size:
+          clamp(
+            3.2rem,
+            15vw,
+            5.2rem
+          );
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      html {
+        scroll-behavior: auto;
+      }
+
+      .orbit {
+        animation: none;
+      }
+
+      * {
+        transition: none !important;
+      }
+    }
+
+    .personal-icon {
+  position: relative;
+
+  width: 240px;
+  height: 180px;
+
+  margin-bottom: 10px;
+}
+
+/* MOON */
+
+.personal-icon {
+  width: 120px;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 8px;
+}
+
+.mini-moon {
+  font-size: 4.2rem;
+  line-height: 1;
+
+  color: var(--pink-2);
+
+  text-shadow:
+    0 0 20px rgba(242, 167, 198, 0.3),
+    0 0 40px rgba(184, 167, 255, 0.16);
+
+  animation: moonFloat 4s ease-in-out infinite;
+}
+
+@keyframes moonFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+
+    <div class="wrap nav-inner">
+
+      <a
+        class="brand"
+        href="#top"
+      >
+        Elvira<span>.</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#about">
+          About
+        </a>
+
+        <a href="#projects">
+          Projects
+        </a>
+
+        <a href="#skills">
+          Skills
+        </a>
+
+        <a href="#education">
+          Education
+        </a>
+
+        <a href="https://github.com/elviramaloku" target="_blank" rel="noopener noreferrer">GitHub</a>
+
+        <a
+          class="pill"
+          href="#contact"
+        >
+          Say hello ✿
+        </a>
+
+      </div>
+
+    </div>
+
+  </nav>
+
+  <main id="top">
+
+    <div class="wrap hero">
+
+        <div class="personal-icon" aria-hidden="true">
+            <div class="mini-moon">☾</div>
+          </div>
+      
+        <div class="hero-content">
+      
+          <div class="eyebrow">
+            ✦ Computer Science Graduate · Prishtina
+          </div>
+      
+          <h1>
+            Hi, I’m Elvira.
+          </h1>
+      
+          <h2 class="hero-subtitle">
+            I turn ideas into clean, thoughtful digital experiences.
+          </h2>
+          
+          <div class="developer-status">
+            <span class="status-dot"></span>
+            <span>Open to software development opportunities</span>
+          </div>
+
+          <div class="hero-actions">
+      
+            <a
+              class="btn primary"
+              href="#projects"
+            >
+              View my work →
+            </a>
+      
+      
+            <a
+              class="btn"
+              href="mailto:elviramaloku06@gmail.com"
+            >
+              Say hello 
+            </a>
+      
+          </div>
+      
+        </div>
+      
+      </div>
+
+      <div
+        class="profile-card"
+        aria-label="Decorative profile card"
+      >
+
+        <div class="orbit"></div>
+
+      </div>
+
+    </div>
+
+    <section id="about">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="kicker">
+              About me
+            </div>
+
+            <h2>
+              Curious, structured & ready to grow.
+            </h2>
+
+          </div>
+
+          <div class="section-note">
+            I’m looking for a junior-level opportunity where I can contribute
+            to real software projects and keep strengthening my technical skills.
+          </div>
+
+        </div>
+
+        <div class="grid-2">
+
+          <div class="card">
+
+            <p class="about-copy">
+              I completed my Bachelor’s degree in Computer Science at the
+              University of Prishtina “Hasan Prishtina” in 2026.
+
+              My studies covered software development, algorithms,
+              databases, computer systems, object-oriented programming
+              and web development.
+            </p>
+
+            <p class="about-copy">
+              I’m reliable, organized and comfortable working with others.
+
+              I value clear communication, deadlines,
+              constructive feedback and steady improvement.
+            </p>
+
+          </div>
+
+          <div class="card facts">
+
+            <div class="fact">
+
+              <strong>
+                Location
+              </strong>
+
+              <span>
+                Prishtina, Kosovo
+              </span>
+
+            </div>
+
+            <div class="fact">
+
+              <strong>
+                Focus
+              </strong>
+
+              <span>
+                Software Development
+              </span>
+
+            </div>
+
+            <div class="fact">
+
+              <strong>
+                Degree
+              </strong>
+
+              <span>
+                BSc Computer Science
+              </span>
+
+            </div>
+
+            <div class="fact">
+
+              <strong>
+                Languages
+              </strong>
+
+              <span>
+                Albanian · English
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="projects">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="kicker">
+              Featured projects
+            </div>
+
+            <h2>
+              Things I’ve built.
+            </h2>
+
+          </div>
+
+          <div class="section-note">
+            A selection of practical work from personal and academic development.
+          </div>
+
+        </div>
+
+        <div class="projects-grid">
+          <article class="card project">
+            <div>
+              <div class="project-top">
+                <div class="project-icon" aria-hidden="true">🎬</div>
+                <span class="tag">Personal Project</span>
+              </div>
+              <h3>MonoFlix</h3>
+              <p>A cinema website built with HTML, CSS and JavaScript, featuring movie listings, upcoming releases, cinema information, events and a membership section.</p>
+              <ul class="project-list">
+                <li>Developed a multi-page cinema-themed web experience.</li>
+                <li>Implemented interactive elements and navigation using JavaScript.</li>
+                <li>Designed a consistent layout for exploring movies and cinema services.</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn primary" href="https://monoflix.netlify.app/" target="_blank" rel="noopener noreferrer">Live Website ↗</a>
+                <a class="btn" href="https://github.com/elviramaloku/MonoFlix" target="_blank" rel="noopener noreferrer">View Code ↗</a>
+              </div>
+            </div>
+            <div class="tag-wrap">
+              <span class="tag">HTML</span><span class="tag">CSS</span>
+              <span class="tag">JavaScript</span><span class="tag">Frontend</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div>
+              <div class="project-top">
+                <div class="project-icon" aria-hidden="true">📱</div>
+                <span class="tag">Android Project</span>
+              </div>
+              <h3>FoodieAndroid</h3>
+              <p>A native Android food-browsing application developed in Kotlin, with product details and shopping cart functionality.</p>
+              <ul class="project-list">
+                <li>Created screens for browsing food items and viewing product details.</li>
+                <li>Implemented a shopping cart flow.</li>
+                <li>Organized features across Android activities.</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn primary" href="https://github.com/elviramaloku/FoodieAndroid" target="_blank" rel="noopener noreferrer">View Code ↗</a>
+              </div>
+            </div>
+            <div class="tag-wrap">
+              <span class="tag">Kotlin</span><span class="tag">Android</span>
+              <span class="tag">Android Studio</span>
+            </div>
+          </article>
+
+          <article class="card project">
+            <div>
+              <div class="project-top">
+                <div class="project-icon" aria-hidden="true">⌘</div>
+                <span class="tag">University Project</span>
+              </div>
+              <h3>Distributed Task Battle</h3>
+              <p>A Java-based distributed task-solving system using TCP sockets to coordinate clients, route tasks, validate answers and track scores.</p>
+              <ul class="project-list">
+                <li>Separated the system into gateway, task, solver and scoring services.</li>
+                <li>Used socket communication and multithreading to handle client connections.</li>
+                <li>Implemented task validation, time limits and a scoreboard.</li>
+              </ul>
+              <div class="project-actions">
+                <a class="btn primary" href="https://github.com/elviramaloku?tab=repositories" target="_blank" rel="noopener noreferrer">Find on GitHub ↗</a>
+              </div>
+            </div>
+            <div class="tag-wrap">
+              <span class="tag">Java</span><span class="tag">TCP Sockets</span>
+              <span class="tag">Multithreading</span><span class="tag">Networking</span>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="skills">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <div class="kicker">Skills</div>
+              <h2>/ My toolkit</h2>
+            </div>
+      
+            <div class="section-note">
+              Technologies and tools I’ve worked with through coursework,
+              projects and personal development.
+            </div>
+          </div>
+      
+          <div class="skills-grid">
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                alt="Python"
+              />
+              <span>Python</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg"
+                alt="Kotlin"
+              />
+              <span>Kotlin</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                alt="Java"
+              />
+              <span>Java</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                alt="JavaScript"
+              />
+              <span>JavaScript</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+                alt="MySQL"
+              />
+              <span>MySQL</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML"
+              />
+              <span>HTML</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS"
+              />
+              <span>CSS</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                alt="React"
+              />
+              <span>React</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                alt="Node.js"
+              />
+              <span>Node.js</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+                alt="PostgreSQL"
+              />
+              <span>PostgreSQL</span>
+            </div>
+      
+            <div class="tech-card">
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                alt="Git"
+              />
+              <span>Git</span>
+            </div>
+      
+          </div>
+        </div>
+      </section>
+
+    <section id="education">
+
+      <div class="wrap">
+
+        <div class="section-head">
+
+          <div>
+
+            <div class="kicker">
+              Education & experience
+            </div>
+
+            <h2>
+              How I got here.
+            </h2>
+
+          </div>
+
+        </div>
+
+        <div class="grid-2">
+
+          <div class="card">
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+
+                <div class="date">
+                  2023 — 2026
+                </div>
+
+                <h3>
+                  Bachelor in Computer Science
+                </h3>
+
+                <p>
+                  University of Prishtina “Hasan Prishtina”
+                </p>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="date">
+                  2019 — 2023
+                </div>
+
+                <h3>
+                  High School Diploma
+                </h3>
+
+                <p>
+                  Natural Gymnasium “Aleksandër Xhuvani”, Podujeva
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="card">
+
+            <div class="timeline">
+
+              <div class="timeline-item">
+
+                <div class="date">
+                  2023 — 2026
+                </div>
+
+                <h3>
+                  University Programming Projects
+                </h3>
+
+                <p>
+                  Java applications, object-oriented programming,
+                  arrays, methods, loops and requirements-based assignments.
+                </p>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="date">
+                  2023 — Present
+                </div>
+
+                <h3>
+                  Web Development Practice
+                </h3>
+
+                <p>
+                  Responsive HTML/CSS pages with basic JavaScript
+                  interaction and dynamic behavior.
+                </p>
+
+              </div>
+
+              <div class="timeline-item">
+
+                <div class="date">
+                  Ongoing
+                </div>
+
+                <h3>
+                  Youth Activities & Volunteering
+                </h3>
+
+                <p>
+                  Community and NGO programs focused on communication,
+                  collaboration and youth development.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="contact">
+
+      <div class="wrap">
+
+        <div class="card contact-card">
+
+          <div class="kicker">
+            Let’s connect
+          </div>
+
+          <h2>
+            Open to junior software opportunities 
+          </h2>
+
+          <p>
+            I’m interested in opportunities where I can contribute to real projects,
+            learn from experienced developers and continue growing as a software engineer.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              class="btn primary"
+              href="mailto:elviramaloku06@gmail.com"
+            >
+              elviramaloku06@gmail.com
+            </a>
+
+            <a class="btn" href="https://github.com/elviramaloku" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+
+            <a
+              class="btn"
+              href="tel:+38349825152"
+            >
+              +383 49 825 152
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+
+    <div class="wrap">
+      Designed with
+      <span class="tiny-heart">
+        ♡
+      </span>
+      for Elvira Maloku · 2026
+    </div>
+
+  </footer>
+
+</body>
+</html>
